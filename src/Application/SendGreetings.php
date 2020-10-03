@@ -9,23 +9,23 @@ use Greetings\Domain\EmployeeRepository;
 final class SendGreetings
 {
     private EmployeeRepository $employeesRepository;
-    private Calendar $clock;
+    private Calendar $calendar;
     private GreetEmployee $greetEmployee;
 
     public function __construct(
         EmployeeRepository $employeeRepository,
-        Calendar $clock,
+        Calendar $calendar,
         GreetEmployee $greetEmployee
     ) {
         $this->employeesRepository = $employeeRepository;
-        $this->clock = $clock;
+        $this->calendar = $calendar;
         $this->greetEmployee = $greetEmployee;
     }
 
     public function toEmployeesBornToday(): void
     {
         $employees = $this->employeesRepository->findAllBornOn(
-            $this->clock->today()
+            $this->calendar->today()
         );
 
         foreach ($employees as $employee) {

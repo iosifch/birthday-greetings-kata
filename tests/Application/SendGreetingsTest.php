@@ -35,13 +35,13 @@ final class SendGreetingsTest extends TestCase
             ]
         ]);
 
-        $clock = new FrozenCalendar(new DateTimeImmutable('2020-10-10'));
+        $calendar = new FrozenCalendar(new DateTimeImmutable('2020-10-10'));
 
         $fakeGreetEmployee = new FakeGreetEmployee();
 
         $sendGreetings = new SendGreetings(
             $employeeRepository,
-            $clock,
+            $calendar,
             $fakeGreetEmployee
         );
 
