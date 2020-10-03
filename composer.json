@@ -1,0 +1,21 @@
+{
+    "name": "iosif/greetings",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^9.4",
+        "symfony/var-dumper": "^5.1"
+    },
+    "require": {
+        "symfony/console": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Greetings\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Greetings\\": "tests"
+        }
+    }
+}
