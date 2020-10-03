@@ -4,22 +4,20 @@ declare(strict_types=1);
 
 namespace Greetings\Application;
 
-use Greetings\Domain\EmployeesRepository;
+use Greetings\Domain\EmployeeRepository;
 
 final class SendGreetings
 {
-    private EmployeesRepository $employeesRepository;
-
+    private EmployeeRepository $employeesRepository;
     private Calendar $clock;
-
     private GreetEmployee $greetEmployee;
 
     public function __construct(
-        EmployeesRepository $employeesRepository,
+        EmployeeRepository $employeeRepository,
         Calendar $clock,
         GreetEmployee $greetEmployee
     ) {
-        $this->employeesRepository = $employeesRepository;
+        $this->employeesRepository = $employeeRepository;
         $this->clock = $clock;
         $this->greetEmployee = $greetEmployee;
     }

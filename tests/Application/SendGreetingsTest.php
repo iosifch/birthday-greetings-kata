@@ -14,7 +14,7 @@ final class SendGreetingsTest extends TestCase
     /** @test */
     public function itShouldSendGreetingsToAllEmployeesBornToday(): void
     {
-        $employeesRepository = new InmemoryEmployeesRepository([
+        $employeeRepository = new InmemoryEmployeeRepository([
             [
                 'firstname' => 'John',
                 'lastname' => 'Doe',
@@ -40,7 +40,7 @@ final class SendGreetingsTest extends TestCase
         $fakeGreetEmployee = new FakeGreetEmployee();
 
         $sendGreetings = new SendGreetings(
-            $employeesRepository,
+            $employeeRepository,
             $clock,
             $fakeGreetEmployee
         );

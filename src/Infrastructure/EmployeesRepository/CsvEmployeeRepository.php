@@ -6,9 +6,9 @@ namespace Greetings\Infrastructure\EmployeesRepository;
 
 use DateTimeImmutable;
 use Greetings\Domain\Employee;
-use Greetings\Domain\EmployeesRepository;
+use Greetings\Domain\EmployeeRepository;
 
-final class CsvEmployeesRepository implements EmployeesRepository
+final class CsvEmployeeRepository implements EmployeeRepository
 {
     private string $csvFilePath;
 

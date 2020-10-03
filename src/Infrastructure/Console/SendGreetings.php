@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Greetings\Infrastructure\Console;
 
 use Greetings\Infrastructure\Calendar\SystemCalendar;
-use Greetings\Infrastructure\EmployeesRepository\CsvEmployeesRepository;
+use Greetings\Infrastructure\EmployeesRepository\CsvEmployeeRepository;
 use Greetings\Infrastructure\GreetEmployee\GreetEmployeeViaConsole;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -30,7 +30,7 @@ final class SendGreetings extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $sendGreetings = new \Greetings\Application\SendGreetings(
-            new CsvEmployeesRepository($this->csvFilePath),
+            new CsvEmployeeRepository($this->csvFilePath),
             new SystemCalendar(),
             new GreetEmployeeViaConsole($output)
         );

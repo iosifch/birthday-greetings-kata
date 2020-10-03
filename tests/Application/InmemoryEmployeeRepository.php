@@ -6,9 +6,9 @@ namespace Tests\Greetings\Application;
 
 use DateTimeImmutable;
 use Greetings\Domain\Employee;
-use Greetings\Domain\EmployeesRepository;
+use Greetings\Domain\EmployeeRepository;
 
-final class InmemoryEmployeesRepository implements EmployeesRepository
+final class InmemoryEmployeeRepository implements EmployeeRepository
 {
     private array $employees;
 
