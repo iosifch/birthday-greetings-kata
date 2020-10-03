@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Greetings\Application;
 
-interface Clock
+interface Calendar
 {
-    public function now(): \DateTimeImmutable;
+    public function today(): \DateTimeImmutable;
 }

@@ -10,13 +10,13 @@ final class SendGreetings
 {
     private EmployeesRepository $employeesRepository;
 
-    private Clock $clock;
+    private Calendar $clock;
 
     private GreetEmployee $greetEmployee;
 
     public function __construct(
         EmployeesRepository $employeesRepository,
-        Clock $clock,
+        Calendar $clock,
         GreetEmployee $greetEmployee
     ) {
         $this->employeesRepository = $employeesRepository;
@@ -27,7 +27,7 @@ final class SendGreetings
     public function toEmployeesBornToday(): void
     {
         $employees = $this->employeesRepository->findAllBornOn(
-            $this->clock->now()
+            $this->clock->today()
         );
 
         foreach ($employees as $employee) {

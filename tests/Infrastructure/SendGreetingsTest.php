@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Infrastructure;
+namespace Tests\Greetings\Infrastructure;
 
 use Greetings\Infrastructure\Console\SendGreetings;
 use PHPUnit\Framework\TestCase;

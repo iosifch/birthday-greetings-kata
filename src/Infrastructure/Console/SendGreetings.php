@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Greetings\Infrastructure\Console;
 
-use Greetings\Infrastructure\Clock\SystemClock;
+use Greetings\Infrastructure\Calendar\SystemCalendar;
 use Greetings\Infrastructure\EmployeesRepository\CsvEmployeesRepository;
 use Greetings\Infrastructure\GreetEmployee\GreetEmployeeViaConsole;
 use Symfony\Component\Console\Command\Command;
@@ -31,7 +31,7 @@ final class SendGreetings extends Command
     {
         $sendGreetings = new \Greetings\Application\SendGreetings(
             new CsvEmployeesRepository($this->csvFilePath),
-            new SystemClock(),
+            new SystemCalendar(),
             new GreetEmployeeViaConsole($output)
         );
 

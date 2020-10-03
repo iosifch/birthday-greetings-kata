@@ -28,7 +28,7 @@ final class InmemoryEmployeesRepository implements EmployeesRepository
             ),
             array_filter(
                 $this->employees,
-                static fn (array $row) => $row['date_of_birth'] === $dateOfBirth->format('Y-m-d')
+                static fn (array $row) => (new DateTimeImmutable($row['date_of_birth']))->format('m-d') === $dateOfBirth->format('m-d')
             )
         );
     }

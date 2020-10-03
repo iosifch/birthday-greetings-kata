@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Tests\Greetings\Application;
 
 use DateTimeImmutable;
-use Greetings\Application\Clock;
+use Greetings\Application\Calendar;
 
-final class FrozenClock implements Clock
+final class FrozenCalendar implements Calendar
 {
     private DateTimeImmutable $now;
 
@@ -16,7 +16,7 @@ final class FrozenClock implements Clock
         $this->now = $now;
     }
 
-    public function now(): DateTimeImmutable
+    public function today(): DateTimeImmutable
     {
         return $this->now;
     }
